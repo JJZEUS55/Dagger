@@ -11,17 +11,13 @@ import com.google.android.material.navigation.NavigationView
 import dagger.Module
 import dagger.Provides
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
-import javax.inject.Named
-import javax.inject.Qualifier
-import javax.inject.Scope
+import javax.inject.*
 
 
 @Qualifier
 @MustBeDocumented
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class Choose(val value: String = "")
-
 
 
 class MainActivity : AppCompatActivity(),
@@ -83,6 +79,11 @@ class Info(val text: String) {
 }
 
 var staticCounter = 0
+
+@Singleton
+class SingletonOne @Inject constructor() {
+    val count = staticCounter++
+}
 
 @ScopeFragment
 class UniqueMagic @Inject constructor() {
