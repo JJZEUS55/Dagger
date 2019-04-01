@@ -22,9 +22,6 @@ import javax.inject.Scope
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
 annotation class Choose(val value: String = "")
 
-@Scope
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation class MagicScope
 
 
 class MainActivity : AppCompatActivity(),
@@ -87,7 +84,7 @@ class Info(val text: String) {
 
 var staticCounter = 0
 
-@MagicScope
+@ScopeFragment
 class UniqueMagic @Inject constructor() {
     val count = staticCounter++
 }

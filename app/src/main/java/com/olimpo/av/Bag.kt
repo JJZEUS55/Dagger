@@ -2,7 +2,9 @@ package com.olimpo.av
 
 import dagger.Module
 import dagger.Provides
+import java.lang.annotation.RetentionPolicy
 import javax.inject.Named
+import javax.inject.Scope
 
 
 @Module
