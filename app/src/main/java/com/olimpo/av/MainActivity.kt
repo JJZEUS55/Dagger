@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(),
     PaintFragment.OnFragmentInteractionListener,
     BFragment.OnFragmentInteractionListener,
     MenuFragment.OnFragmentInteractionListener,
+    GraphicsFragment.OnFragmentInteractionListener,
     NavigationView.OnNavigationItemSelectedListener {
 
     @Inject

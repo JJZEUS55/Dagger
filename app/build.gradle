@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.13'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
     kapt 'com.google.dagger:dagger-compiler:2.13'
-    kaptTest  'com.google.dagger:dagger-compiler:2.13'
+    kaptTest 'com.google.dagger:dagger-compiler:2.13'
 
     //Signature
     implementation 'com.github.gcacace:signature-pad:1.2.1'
@@ -52,5 +52,9 @@ dependencies {
 
     //Material Design
     implementation 'com.google.android.material:material:1.0.0'
+
+    //Grapichs
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
 
 }

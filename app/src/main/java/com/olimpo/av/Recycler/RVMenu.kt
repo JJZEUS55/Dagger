@@ -6,13 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.MenuObject
 import com.olimpo.av.R
-import java.util.zip.Inflater
 
-class RVMenu(private val listMenu : List<String>) : RecyclerView.Adapter<RVMenu.MenuHolder>() {
+class RVMenu(var listMenu: List<MenuObject>) : RecyclerView.Adapter<RVMenu.MenuHolder>() {
 
+    val countList: Int = listMenu.count()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuHolder {
         val inflateView = parent.inflate(R.layout.row_menu, false)
         return MenuHolder(inflateView)
     }
@@ -22,31 +23,44 @@ class RVMenu(private val listMenu : List<String>) : RecyclerView.Adapter<RVMenu.
     }
 
     override fun onBindViewHolder(holder: MenuHolder, position: Int) {
-        val title : String = listMenu[position]
-        holder.txtValMenu.text = title
-        if (position == 0)
-            holder.viewIsPressed.visibility = View.VISIBLE
-
-        if(position == itemCount - 1)
-            holder.viewBottom.visibility = View.VISIBLE
-
+        val title: MenuObject = listMenu[position]
+        holder.bind(title)
     }
 
-    class MenuHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+    fun resetFlags(){
+        for (itemMenu in listMenu){
+            itemMenu.visibility = View.GONE
+        }
+        notifyDataSetChanged()
+    }
 
-        lateinit var txtValMenu : TextView
-        lateinit var viewIsPressed : View
-        lateinit var viewBottom : View
+    private fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
+        return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
+    }
 
-        init {
-            txtValMenu = itemView.findViewById(R.id.txt_val_menu)
-            viewIsPressed = itemView.findViewById(R.id.view_is_pressed)
-            viewBottom = itemView.findViewById(R.id.view_bottom)
+    inner class MenuHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        var txtValMenu: TextView = itemView.findViewById(R.id.txt_val_menu)
+        var viewIsPressed: View = itemView.findViewById(R.id.view_is_pressed)
+        var viewBottom: View = itemView.findViewById(R.id.view_bottom)
+
+        fun bind(item: MenuObject) {
+            txtValMenu.text = item.title
+            viewIsPressed.visibility = View.GONE
+
+            if (layoutPosition == 0)
+                viewIsPressed.visibility = View.VISIBLE
+
+//            if (layoutPosition == itemCount - 1)
+//                viewBottom.visibility = View.VISIBLE
+
+            txtValMenu.setOnClickListener {
+                resetFlags()
+                viewIsPressed.visibility = View.VISIBLE
+            }
         }
 
     }
 
-    fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
-        return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
-    }
+
 }

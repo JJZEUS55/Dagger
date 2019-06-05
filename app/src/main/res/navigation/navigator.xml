@@ -8,6 +8,10 @@
         <action android:id="@+id/action_mainFragment_to_paintFragment" app:destination="@id/paintFragment"/>
         <action android:id="@+id/action_mainFragment_to_BFragment" app:destination="@id/BFragment"/>
         <action android:id="@+id/action_mainFragment_to_menuFragment" app:destination="@id/menuFragment"/>
+        <action android:id="@+id/action_mainFragment_to_graphicsFragment" app:destination="@id/graphicsFragment"/>
+        <action android:id="@+id/action_mainFragment_to_login" app:destination="@id/login"/>
+        <action android:id="@+id/action_mainFragment_to_fragment_status_delivery"
+                app:destination="@id/fragment_status_delivery"/>
     </fragment>
 
     <fragment android:id="@+id/paintFragment" android:name="com.olimpo.av.PaintFragment" android:label="fragment_paint"
@@ -17,5 +21,12 @@
               tools:layout="@layout/fragment_b"/>
     <fragment android:id="@+id/menuFragment" android:name="com.olimpo.av.MenuFragment" android:label="fragment_menu"
               tools:layout="@layout/fragment_menu"/>
+    <fragment android:id="@+id/graphicsFragment" android:name="com.olimpo.av.GraphicsFragment"
+              android:label="fragment_graphics" tools:layout="@layout/fragment_graphics"/>
+    <fragment android:id="@+id/login" android:name="com.olimpo.av.Login" android:label="fragment_login"
+              tools:layout="@layout/fragment_login"/>
+    <fragment android:id="@+id/fragment_status_delivery" android:name="com.olimpo.av.fragment_status_delivery"
+              android:label="fragment_fragment_status_delivery"
+              tools:layout="@layout/fragment_fragment_status_delivery"/>
 
 </navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/action_status"
+                android:title="Estatus"
+                android:icon="@drawable/ic_launcher_background"/>
+        <item
+                android:id="@+id/action_deliveries"
+                android:title="Entregas"
+                android:icon="@drawable/ic_launcher_background"/>
+        <item
+                android:id="@+id/action_support"
+                android:title="Soporte"
+                android:icon="@drawable/ic_launcher_background"/>
+        <item
+                android:id="@+id/action_term_cond"
+                android:title="Términos y Condiciones"
+                android:icon="@drawable/ic_launcher_background"/>
+        <item
+                android:id="@+id/action_exit"
+                android:title="Salir"
+                android:icon="@drawable/ic_launcher_background"/>
+    </group>
+</menu>

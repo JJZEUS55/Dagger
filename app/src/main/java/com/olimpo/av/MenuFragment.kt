@@ -74,12 +74,12 @@ class MenuFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val list: MutableList<String> = ArrayList()
-        list.add("Estatus")
-        list.add("Entregas")
-        list.add("Soporte")
-        list.add("Terminos y Condiciones")
-        list.add("Salir")
+        val list: MutableList<MenuObject> = ArrayList()
+        list.add(MenuObject("Estatus", View.VISIBLE))
+        list.add(MenuObject("Entregas", View.GONE))
+        list.add(MenuObject("Soporte", View.GONE))
+        list.add(MenuObject("Terminos y Condiciones", View.GONE))
+        list.add(MenuObject("Salir", View.GONE))
 
         linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 

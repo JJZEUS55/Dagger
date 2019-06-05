@@ -11,9 +11,3 @@ interface MagicBox {
     fun pokeStore(storage: Storage)
 }
 
-
-@Singleton
-@Component
-interface SingletonBox {
-    fun getMagicBox(): MagicBox
-}
