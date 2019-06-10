@@ -6,4 +6,16 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorPrincipalAvon">#FF336D</color>
     <color name="colorGray">#5A5758</color>
+
+    <color name="colorBackgroundItems">#F7F7F7</color>
+
+    <!--STATUS DELIVERY-->
+    <color name="colorCardView">#546264</color>
+    <color name="colorTitle">#181818</color>
+
+
+    <!--DELIVERY-->
+    <color name="colorTableHeader1">#E4EDED</color>
+    <color name="colorTextTable">#546264</color>
+
 </resources>

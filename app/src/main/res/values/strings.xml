@@ -10,5 +10,50 @@
     <string name="cancel">No</string>
     <string name="accept">Si</string>
 
+    <!--STATUS DELIVERY-->
+    <string name="value_order">
+        <b>Valor Pedido:</b>
+    </string>
+    <string name="on_route">EN RUTA</string>
+    <string name="zone">
+        <b>Zona:</b>
+    </string>
+    <string name="no_repre">No. Representante:</string>
+    <string name="name">Name</string>
+    <string name="route">
+        <b>Ruta:</b>
+    </string>
+    <string name="campaign">
+        <b>Campaña:</b>
+    </string>
+    <string name="status_delivery">Estatus de la entrega</string>
+    <string name="consult_order">Consulta tu pedido</string>
+    <string name="order_status">Estatus del pedido:</string>
+    <string name="button_terms">Continuar</string>
+    <string name="tittle_terms">Términos y Condiciones</string>
+    <string name="check_terms">Acepto términos y condiciones</string>
+    <string name="forgot_password">¿Olvidates tu contraseña?</string>
+    <string name="version">Versión</string>
+    <string name="delivery">Entrega</string>
+    <string name="driver_delivery">Chofer de Reparto</string>
+    <string name="name_driver_delivery">Name</string>
+    <string name="zone_wo_black">Zona:</string>
+    <string name="route_wo_black">Ruta:</string>
+    <string name="score">Calificación</string>
+    <string name="address_delivery">Dirección de entrega:</string>
+    <string name="address">
+        <b>Dirección:</b>
+    </string>
+    <string name="ordered_items">El pedido consta de:</string>
+    <string name="code">Código</string>
+    <string name="description">Descripción</string>
+    <string name="quantity">Cantidad</string>
+    <string name="total_package">Total de Bultos a Entregar:</string>
+    <string name="value_payment">Valor a cobrar</string>
+    <string name="amount">Monto:</string>
+    <string name="status_value">Pendiente</string>
+    <string name="payment_type">Tipo de pago:</string>
+    <string name="score_delivery">Califica tu entrega</string>
+
 
 </resources>

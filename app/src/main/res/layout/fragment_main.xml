@@ -39,6 +39,16 @@
                 android:id="@+id/btn_chart"
         />
 
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON ESTATUS"
+                android:id="@+id/btn_status"
+        />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON ENTREGA"
+                android:id="@+id/btn_entrega"
+        />
+
     </LinearLayout>
 
 </FrameLayout>

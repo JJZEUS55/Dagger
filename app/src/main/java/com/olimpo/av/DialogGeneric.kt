@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 class DialogGeneric : DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         return inflater.inflate(R.layout.fragment_dialog_generic, container, false)
     }
 

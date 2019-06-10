@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".DeliveryFragment">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:fillViewport="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content"
+        >
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery"
+                    style="@style/textSizeTitle14"
+                    app:layout_constraintHeight_percent="0.05"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    android:id="@+id/textView7" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/card_delivery"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+                                               android:id="@+id/card_delivery"
+                                               android:layout_marginTop="8dp"
+                                               app:layout_constraintHeight_percent="0.2"
+                                               app:layout_constraintTop_toBottomOf="@+id/textView7"
+                                               app:layout_constraintStart_toStartOf="parent"
+                                               android:layout_marginStart="8dp"
+                                               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                               android:layout_marginBottom="8dp"
+                                               app:layout_constraintBottom_toTopOf="@+id/txt_address">
+
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                                   android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_width="0dp"
+                                                                  android:layout_height="0dp"
+                                                                  android:id="@+id/image_avatar_blue"
+                                                                  app:srcCompat="@drawable/ic_avatar_blue"
+                                                                  android:layout_marginTop="8dp"
+                                                                  app:layout_constraintWidth_percent="0.2"
+                                                                  app:layout_constraintTop_toTopOf="parent"
+                                                                  app:layout_constraintStart_toStartOf="parent"
+                                                                  android:layout_marginStart="8dp"
+                                                                  android:layout_marginBottom="8dp"
+                                                                  app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                  app:layout_constraintLeft_toRightOf="@+id/image_avatar_blue"
+                                  android:orientation="vertical"
+                                  app:layout_constraintWidth_percent="0.4"
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  android:layout_marginBottom="8dp"
+                                  android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                                  android:id="@+id/linearLayout3"
+                                  android:layout_marginStart="12dp" app:layout_constraintVertical_bias="0.0">
+
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/driver_delivery"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  style="@style/textSize16"
+                                  android:text="@string/name_driver_delivery"
+                                  android:layout_marginTop="8dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                      android:orientation="horizontal"
+                                      android:layout_marginTop="8dp">
+
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                      android:id="@+id/txt_zone"
+                                      style="@style/textSize12"
+                                      android:text="@string/zone_wo_black"
+                                      android:layout_weight="0.5"/>
+
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                      android:id="@+id/txt_route"
+                                      style="@style/textSize12"
+                                      android:text="@string/route_wo_black"
+                                      android:layout_weight="0.5"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  app:layout_constraintWidth_percent="0.3"
+                                  android:layout_marginTop="8dp"
+                                  app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                                  android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.487"
+                                  android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:text="4.52"
+                                  android:drawableEnd="@drawable/ic_star_2"
+                                  android:drawablePadding="8dp"
+                                  style="@style/textSize16"
+                        />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="@string/score"
+                                  style="@style/textSize12"
+                        />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_address"
+                      android:text="@string/address_delivery"
+                      app:layout_constraintTop_toBottomOf="@+id/card_delivery"
+                      app:layout_constraintStart_toStartOf="parent"
+                      android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                      android:layout_marginTop="8dp"
+                      app:layout_constraintHeight_percent="0.05"
+                      android:layout_marginEnd="8dp"
+                      style="@style/textSizeTitle14" android:layout_marginBottom="8dp"
+                      app:layout_constraintBottom_toTopOf="@+id/card_address"/>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHeight_percent="0.2"
+                    android:id="@+id/card_address"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_address" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_order_items">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:text="@string/address"
+                              android:layout_marginTop="8dp"
+                              app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                              style="@style/textSize12"
+                              android:padding="8dp"
+                              android:layout_marginBottom="8dp"
+                              android:background="@color/colorBackgroundItems"
+                              app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                              app:layout_constraintTop_toTopOf="parent" android:id="@+id/textView8"/>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/linearLayout2" app:layout_constraintEnd_toEndOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  android:layout_marginBottom="8dp"
+                                  app:layout_goneMarginTop="8dp"
+                                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                  app:layout_constraintHorizontal_bias="0.0"
+                                  app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_zone_address"
+                                  android:text="@string/zone"
+                                  android:layout_weight="0.25"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_route_address"
+                                  android:text="@string/route"
+                                  android:layout_weight="0.25"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_campaign"
+                                  android:layout_weight="0.4"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/campaign"
+                                  android:padding="8dp"
+                                  android:background="@color/colorBackgroundItems"
+                        />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_order_items"
+                      android:text="@string/ordered_items"
+                      style="@style/textSizeTitle14"
+                      app:layout_constraintHeight_percent="0.05"
+                      app:layout_constraintTop_toBottomOf="@+id/card_address"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      android:layout_marginTop="8dp"
+                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                      app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
+                      app:layout_constraintBottom_toTopOf="@+id/card_order"/>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHeight_percent="0.2"
+                    android:id="@+id/card_order"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_order_items" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_value_payment">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                  android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                                  android:id="@+id/linearLayout4" app:layout_constraintTop_toTopOf="parent"
+                                  app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.073">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_status"
+                                  android:text="@string/on_route"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:drawablePadding="8dp"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:layout_weight="0.5"
+                                  android:gravity="center_vertical"
+                                  android:drawableStart="@drawable/ic_truck"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="match_parent"
+                                  android:id="@+id/txt_value_order"
+                                  android:layout_weight="0.5"
+                                  android:layout_gravity="center_vertical"
+                                  android:padding="8dp"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:text="@string/value_order"
+                        />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/lyt_table_items" app:layout_constraintEnd_toEndOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                                  android:layout_marginBottom="8dp"
+                                  app:layout_goneMarginTop="8dp"
+                                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                  app:layout_constraintHorizontal_bias="0.0"
+                                  android:background="@color/colorTableHeader1"
+                    >
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_code"
+                                  android:text="@string/code"
+                                  android:layout_weight="0.25"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_desc"
+                                  android:text="@string/description"
+                                  android:layout_weight="0.45"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_quantity"
+                                  android:layout_weight="0.25"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/quantity"
+                                  android:padding="8dp"
+                        />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
+                                                               android:layout_marginTop="8dp"
+                                                               app:layout_constraintBottom_toTopOf="@+id/lny_total"
+                                                               android:layout_marginBottom="8dp"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               android:layout_marginStart="8dp"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:layout_marginEnd="8dp">
+
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/lny_total"
+                                  app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  android:layout_marginBottom="8dp"
+                                  android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  android:background="@color/colorTableHeader1">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.7"
+                                  android:gravity="right"
+                                  style="@style/textSizeMedium12"
+                                  android:text="@string/total_package"
+                                  android:padding="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.2"
+                                  style="@style/textSizeMedium12"
+                                  android:gravity="center"
+                                  android:text="4"
+                                  android:padding="8dp"
+                        />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_value_payment"
+                      android:text="@string/value_payment"
+                      app:layout_constraintHeight_percent="0.05"
+                      style="@style/textSizeTitle14"
+                      app:layout_constraintTop_toBottomOf="@+id/card_order"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      android:layout_marginTop="8dp"
+                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                      app:layout_constraintHorizontal_bias="0.0"
+                      app:layout_constraintBottom_toTopOf="@+id/card_value_payment"
+                      android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/card_value_payment"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_value_payment"
+                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                                   android:layout_height="wrap_content">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/linearLayout5" app:layout_constraintEnd_toEndOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                  app:layout_constraintHorizontal_bias="1.0" app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_amount"
+                                  android:text="@string/amount"
+                                  android:layout_weight="0.3"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_value_route"
+                                  android:text="@string/route"
+                                  android:layout_weight="0.2"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_value_campaign"
+                                  android:layout_weight="0.4"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/campaign"
+                                  android:padding="8dp"
+                                  android:background="@color/colorBackgroundItems"
+                        />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:layout_marginTop="8dp"
+                                  app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+                                  app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                  android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                                  android:id="@+id/linearLayout6">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_payment_type"
+                                  android:text="@string/payment_type"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                                  android:drawablePadding="8dp"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:layout_weight="0.5"
+                                  android:gravity="center_vertical"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="match_parent"
+                                  android:id="@+id/txt_value_status"
+                                  android:layout_weight="0.5"
+                                  android:layout_gravity="center_vertical"
+                                  android:padding="8dp"
+                                  android:gravity="center"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:background="@color/colorBackgroundItems"
+                                  android:text="@string/status_value"
+                        />
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

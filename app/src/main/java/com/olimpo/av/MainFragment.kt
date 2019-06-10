@@ -65,11 +65,19 @@ class MainFragment : Fragment() {
 
         btn_dialog.setOnClickListener {
             val dialogGen : DialogGeneric = DialogGeneric()
-            dialogGen.show(fragmentManager, "DialogGen")
+            dialogGen.show(fragmentManager!!, "DialogGen")
         }
 
         btn_chart.setOnClickListener { v ->
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_graphicsFragment)
+        }
+
+        btn_status.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragment_status_delivery)
+        }
+
+        btn_entrega.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_deliveryFragment)
         }
     }
 
