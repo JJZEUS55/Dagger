@@ -23,26 +23,20 @@
                     android:layout_height="wrap_content"
                     android:text="@string/delivery"
                     style="@style/textSizeTitle14"
-                    app:layout_constraintHeight_percent="0.05"
                     android:layout_marginTop="8dp"
                     android:textAlignment="center"
-                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:id="@+id/textView7" android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/card_delivery"/>
+                    android:id="@+id/textView7"
+            />
 
             <androidx.cardview.widget.CardView android:layout_width="match_parent"
                                                android:layout_height="wrap_content"
                                                android:id="@+id/card_delivery"
                                                android:layout_marginTop="8dp"
-                                               app:layout_constraintHeight_percent="0.2"
-                                               app:layout_constraintTop_toBottomOf="@+id/textView7"
-                                               app:layout_constraintStart_toStartOf="parent"
                                                android:layout_marginStart="8dp"
-                                               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                                               android:layout_marginBottom="8dp"
-                                               app:layout_constraintBottom_toTopOf="@+id/txt_address">
+                                               android:layout_marginEnd="8dp"
+            >
 
                 <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                                    android:layout_height="wrap_content">
@@ -72,12 +66,14 @@
                         <TextView android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
                                   android:layout_marginTop="8dp"
+                                  android:lines="1"
                                   style="@style/textSize12"
                                   android:text="@string/driver_delivery"/>
 
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                   style="@style/textSize16"
                                   android:text="@string/name_driver_delivery"
+                                  android:lines="1"
                                   android:layout_marginTop="8dp"/>
 
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -87,11 +83,14 @@
                             <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                       android:id="@+id/txt_zone"
                                       style="@style/textSize12"
+                                      android:lines="1"
                                       android:text="@string/zone_wo_black"
                                       android:layout_weight="0.5"/>
 
                             <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                       android:id="@+id/txt_route"
+                                      android:lines="1"
+                                      android:layout_marginStart="8dp"
                                       style="@style/textSize12"
                                       android:text="@string/route_wo_black"
                                       android:layout_weight="0.5"/>
@@ -128,27 +127,20 @@
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:id="@+id/txt_address"
                       android:text="@string/address_delivery"
-                      app:layout_constraintTop_toBottomOf="@+id/card_delivery"
-                      app:layout_constraintStart_toStartOf="parent"
-                      android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                      android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
-                      app:layout_constraintHeight_percent="0.05"
                       android:layout_marginEnd="8dp"
-                      style="@style/textSizeTitle14" android:layout_marginBottom="8dp"
-                      app:layout_constraintBottom_toTopOf="@+id/card_address"/>
+                      style="@style/textSizeTitle14"
+            />
 
             <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintHeight_percent="0.2"
                     android:id="@+id/card_address"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_address" android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_order_items">
+            >
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -215,26 +207,18 @@
                       android:id="@+id/txt_order_items"
                       android:text="@string/ordered_items"
                       style="@style/textSizeTitle14"
-                      app:layout_constraintHeight_percent="0.05"
-                      app:layout_constraintTop_toBottomOf="@+id/card_address"
-                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
-                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                      app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
-                      app:layout_constraintBottom_toTopOf="@+id/card_order"/>
+                      android:layout_marginEnd="8dp"
+            />
 
             <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintHeight_percent="0.2"
                     android:id="@+id/card_order"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_order_items" android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_value_payment">
+                    android:layout_marginEnd="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -243,9 +227,9 @@
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                                   app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                                  android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                                  android:layout_marginTop="8dp"
                                   android:id="@+id/linearLayout4" app:layout_constraintTop_toTopOf="parent"
-                                  app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.073">
+                    >
 
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                   android:id="@+id/txt_status"
@@ -279,13 +263,13 @@
                                   android:layout_marginBottom="8dp"
                                   app:layout_goneMarginTop="8dp"
                                   android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-                                  app:layout_constraintHorizontal_bias="0.0"
                                   android:background="@color/colorTableHeader1"
                     >
 
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                   android:id="@+id/txt_code"
                                   android:text="@string/code"
+                                  android:lines="1"
                                   android:layout_weight="0.25"
                                   android:padding="8dp"
                                   style="@style/textSize12"
@@ -296,6 +280,7 @@
                                   android:text="@string/description"
                                   android:layout_weight="0.45"
                                   android:padding="8dp"
+                                  android:lines="1"
                                   style="@style/textSize12"
                                   android:layout_marginStart="8dp"
                         />
@@ -306,16 +291,19 @@
                                   android:layout_marginStart="8dp"
                                   style="@style/textSize12"
                                   android:text="@string/quantity"
+                                  android:lines="1"
                                   android:padding="8dp"
                         />
                     </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
                                                                android:layout_height="wrap_content"
+                                                               android:id="@+id/rv_order"
                                                                app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
                                                                android:layout_marginTop="8dp"
                                                                app:layout_constraintBottom_toTopOf="@+id/lny_total"
                                                                android:layout_marginBottom="8dp"
+                                                               tools:listitem="@layout/item_table_order"
                                                                app:layout_constraintStart_toStartOf="parent"
                                                                android:layout_marginStart="8dp"
                                                                app:layout_constraintEnd_toEndOf="parent"
@@ -327,17 +315,17 @@
 
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:id="@+id/lny_total"
-                                  app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
+                                  app:layout_constraintTop_toBottomOf="@+id/rv_order"
                                   android:orientation="horizontal"
                                   android:layout_marginTop="8dp"
                                   app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                                  app:layout_constraintBottom_toBottomOf="parent"
-                                  android:layout_marginBottom="8dp"
                                   android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                                  android:background="@color/colorTableHeader1">
+                                  android:background="@color/colorTableHeader1" android:layout_marginBottom="8dp"
+                                  app:layout_constraintBottom_toBottomOf="parent">
 
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                   android:layout_weight="0.7"
+                                  android:lines="1"
                                   android:gravity="right"
                                   style="@style/textSizeMedium12"
                                   android:text="@string/total_package"
@@ -349,6 +337,7 @@
                                   style="@style/textSizeMedium12"
                                   android:gravity="center"
                                   android:text="4"
+                                  android:lines="1"
                                   android:padding="8dp"
                         />
 
@@ -360,15 +349,11 @@
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:id="@+id/txt_value_payment"
                       android:text="@string/value_payment"
-                      app:layout_constraintHeight_percent="0.05"
                       style="@style/textSizeTitle14"
-                      app:layout_constraintTop_toBottomOf="@+id/card_order"
-                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
-                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                      app:layout_constraintHorizontal_bias="0.0"
-                      app:layout_constraintBottom_toTopOf="@+id/card_value_payment"
-                      android:layout_marginBottom="8dp"/>
+                      android:layout_marginEnd="8dp"
+            />
 
             <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
@@ -377,10 +362,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_value_payment"
-                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
+                    android:layout_marginBottom="8dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                                    android:layout_height="wrap_content">
@@ -397,12 +379,14 @@
                                   android:layout_weight="0.3"
                                   android:padding="8dp"
                                   style="@style/textSize12"
+                                  android:lines="1"
                                   android:background="@color/colorBackgroundItems"
                         />
 
                         <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                                   android:id="@+id/txt_value_route"
                                   android:text="@string/route"
+                                  android:lines="1"
                                   android:layout_weight="0.2"
                                   android:padding="8dp"
                                   style="@style/textSize12"
@@ -437,6 +421,7 @@
                                   android:drawablePadding="8dp"
                                   android:background="@color/colorBackgroundItems"
                                   android:layout_weight="0.5"
+                                  android:lines="1"
                                   android:gravity="center_vertical"
                         />
 
@@ -448,6 +433,7 @@
                                   android:gravity="center"
                                   android:layout_marginStart="8dp"
                                   style="@style/textSize12"
+                                  android:lines="1"
                                   android:background="@color/colorBackgroundItems"
                                   android:text="@string/status_value"
                         />

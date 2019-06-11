@@ -16,6 +16,8 @@
         <action android:id="@+id/action_mainFragment_to_deliveryFragment" app:destination="@id/deliveryFragment"/>
         <action android:id="@+id/action_mainFragment_to_scoreDeliveryFragment"
                 app:destination="@id/scoreDeliveryFragment"/>
+        <action android:id="@+id/action_mainFragment_to_withOutOrderFragment"
+                app:destination="@id/withOutOrderFragment"/>
     </fragment>
 
     <fragment android:id="@+id/paintFragment" android:name="com.olimpo.av.PaintFragment" android:label="fragment_paint"
@@ -38,5 +40,7 @@
               android:label="fragment_delivery" tools:layout="@layout/fragment_delivery"/>
     <fragment android:id="@+id/scoreDeliveryFragment" android:name="com.olimpo.av.ScoreDeliveryFragment"
               android:label="fragment_score_delivery" tools:layout="@layout/fragment_score_delivery"/>
+    <fragment android:id="@+id/withOutOrderFragment" android:name="com.olimpo.av.WithOutOrderFragment"
+              android:label="fragment_with_out_order" tools:layout="@layout/fragment_with_out_order"/>
 
 </navigation>

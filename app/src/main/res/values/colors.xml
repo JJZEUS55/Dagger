@@ -18,4 +18,6 @@
     <color name="colorTableHeader1">#E4EDED</color>
     <color name="colorTextTable">#546264</color>
 
+    <color name="colorLine">#A2ACAE</color>
+
 </resources>

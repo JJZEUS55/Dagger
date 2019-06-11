@@ -6,7 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--FRAGMENT MENU-->
-    <string name="num_repressing">No. Representante</string>
+    <string name="num_repressing">No. Representante:</string>
     <string name="cancel">No</string>
     <string name="accept">Si</string>
 
@@ -54,6 +54,16 @@
     <string name="status_value">Pendiente</string>
     <string name="payment_type">Tipo de pago:</string>
     <string name="score_delivery">Califica tu entrega</string>
+    <string name="deliveries_done">Entregas Realizadas</string>
+    <string name="do_better">¿Qué deberíamos mejorar?</string>
+    <string name="add_comment">Agregue un comentario</string>
+    <string name="send">Enviar</string>
+    <string name="with_out_order">Sin Pedido</string>
+    <string name="msg_with_out_order">No tienes ningún pedido solicitado</string>
+    <string name="do_order">Haz tu pedido</string>
+    <string name="continueButton">Continuar</string>
+    <string name="msg_question_1">¿Esta seguro que desea cerrar la sesión?</string>
+    <string name="login">Entrar</string>
 
 
 </resources>

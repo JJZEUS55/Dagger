@@ -51,9 +51,6 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        btn_paint.setOnClickListener { v ->
-            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_paintFragment)
-        }
 
         btn_frag2.setOnClickListener { v ->
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_login)
@@ -68,16 +65,24 @@ class MainFragment : Fragment() {
             dialogGen.show(fragmentManager!!, "DialogGen")
         }
 
-        btn_chart.setOnClickListener { v ->
-            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_graphicsFragment)
-        }
-
         btn_status.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragment_status_delivery)
         }
 
         btn_entrega.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_deliveryFragment)
+        }
+
+        btn_score_delivery.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_scoreDeliveryFragment)
+        }
+
+        btn_wo_order.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_withOutOrderFragment)
+        }
+
+        btn_terms.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragmentTerms)
         }
     }
 

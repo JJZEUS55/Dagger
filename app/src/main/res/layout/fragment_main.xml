@@ -15,13 +15,8 @@
                 android:text="HI MAIN FRAGMENT"/>
 
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:id="@+id/btn_paint"
-                android:text="BUTTON PAINT"
-        />
-
-        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:id="@+id/btn_frag2"
-                android:text="BUTTON FRAG2"
+                android:text="BUTTON LOGIN"
         />
 
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -35,11 +30,6 @@
         />
 
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="BUTTON GRAFICA"
-                android:id="@+id/btn_chart"
-        />
-
-        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:text="BUTTON ESTATUS"
                 android:id="@+id/btn_status"
         />
@@ -47,6 +37,20 @@
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:text="BUTTON ENTREGA"
                 android:id="@+id/btn_entrega"
+        />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON CALIFICAR"
+                android:id="@+id/btn_score_delivery"
+        />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON SIN PEDIDO"
+                android:id="@+id/btn_wo_order"
+        />
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON TERMINOS"
+                android:id="@+id/btn_terms"
         />
 
     </LinearLayout>
