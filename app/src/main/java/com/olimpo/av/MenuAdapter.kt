@@ -38,9 +38,9 @@ class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAda
 
     inner class MenuHolder(
         val parent: ViewGroup,
-        val binding: RowMenuBinding = DataBindingUtil.inflate(
+        val binding: com.olimpo.av.databinding.ItemMenuBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.row_menu,
+            R.layout.item_menu,
             parent,
             false
         )

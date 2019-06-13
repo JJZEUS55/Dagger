@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MenuViewModel: ViewModel(){
-
     var lstLiveMenu:LiveData<List<MenuObject>> = MutableLiveData<List<MenuObject>>().apply {
         val lst = ArrayList<MenuObject>()
         lst.add(MenuObject("Estatus", ObservableField(false)))
@@ -17,5 +16,4 @@ class MenuViewModel: ViewModel(){
         lst.add(MenuObject("Salir", ObservableField(false)))
         value = lst
     }
-
 }
