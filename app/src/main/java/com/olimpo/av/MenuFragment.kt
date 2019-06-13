@@ -7,10 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.olimpo.av.Recycler.RVMenu
 import kotlinx.android.synthetic.main.fragment_menu.*
+import com.olimpo.av.databinding.FragmentMenuBinding
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,8 +35,9 @@ class MenuFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var adapter: RVMenu
-    private lateinit var recyclerView: RecyclerView
+    private val adapter: MenuAdapter by lazy { MenuAdapter(emptyList()) }
+    private val viewModel by lazy { ViewModelProviders.of(this)[MenuViewModel::class.java] }
+    lateinit var binding: FragmentMenuBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,8 +52,10 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
+        binding.lifecycleOwner = this
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false)
+        return binding.root
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -60,11 +65,6 @@ class MenuFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-        }
     }
 
     override fun onDetach() {
@@ -72,21 +72,15 @@ class MenuFragment : Fragment() {
         listener = null
     }
 
-    override fun onStart() {
-        super.onStart()
-        val list: MutableList<MenuObject> = ArrayList()
-        list.add(MenuObject("Estatus", View.VISIBLE))
-        list.add(MenuObject("Entregas", View.GONE))
-        list.add(MenuObject("Soporte", View.GONE))
-        list.add(MenuObject("Terminos y Condiciones", View.GONE))
-        list.add(MenuObject("Salir", View.GONE))
-
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
-        adapter = RVMenu(list)
-        rv_menu.adapter = adapter
         rv_menu.layoutManager = linearLayoutManager
+        rv_menu.hasFixedSize()
+        rv_menu.adapter = adapter
 
+        binding.itemsViewModel = viewModel
     }
 
     /**

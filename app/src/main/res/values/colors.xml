@@ -2,6 +2,10 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
+
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorPrincipalAvon">#FF336D</color>
@@ -19,5 +23,7 @@
     <color name="colorTextTable">#546264</color>
 
     <color name="colorLine">#A2ACAE</color>
+
+    <color name="colorTableHeader">#59C3B2</color>
 
 </resources>

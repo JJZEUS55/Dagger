@@ -62,6 +62,9 @@ class MainFragment : Fragment() {
 
         btn_dialog.setOnClickListener {
             val dialogGen : DialogGeneric = DialogGeneric()
+            dialogGen.txtBody = "HOLA PRROS"
+            dialogGen.txtOkButton = "ACEPTAR"
+            dialogGen.visibilityButtonCancel = View.GONE
             dialogGen.show(fragmentManager!!, "DialogGen")
         }
 
@@ -83,6 +86,10 @@ class MainFragment : Fragment() {
 
         btn_terms.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragmentTerms)
+        }
+
+        btn_orden_table.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_ordenFragment)
         }
     }
 

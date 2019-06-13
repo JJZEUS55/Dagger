@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.unit.DeliveryItem
+import kotlinx.android.synthetic.main.fragment_delivery.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +32,9 @@ class DeliveryFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var adapter: DeliveryAdapter
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +59,42 @@ class DeliveryFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val list: MutableList<DeliveryItem> = ArrayList()
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+        list.add(DeliveryItem(12345678, "CAJA-35PZAS", 1))
+
+        linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        adapter = DeliveryAdapter(list)
+        rv_order.adapter = adapter
+//        rv_order.isNestedScrollingEnabled = false
+        rv_order.layoutManager = linearLayoutManager
+
     }
 
     override fun onDetach() {
