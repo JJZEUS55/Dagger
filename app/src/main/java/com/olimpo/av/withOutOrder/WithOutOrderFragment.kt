@@ -23,7 +23,6 @@ private const val ARG_PARAM2 = "param2"
  * to handle interaction events.
  * Use the [WithOutOrderFragment.newInstance] factory method to
  * create an instance of this fragment.
- *
  */
 class WithOutOrderFragment : Fragment() {
     // TODO: Rename and change types of parameters
