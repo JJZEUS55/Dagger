@@ -1,17 +1,17 @@
-package com.olimpo.av
+package com.olimpo.av.menu
 
+import android.content.Context
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_menu.*
-import com.olimpo.av.databinding.FragmentMenuBinding
+import androidx.navigation.Navigation
+import com.olimpo.av.R
+import com.olimpo.av.dialog.DialogGeneric
+import kotlinx.android.synthetic.main.fragment_main.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,22 +22,17 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MenuFragment.OnFragmentInteractionListener] interface
+ * [MainFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MenuFragment.newInstance] factory method to
+ * Use the [MainFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MenuFragment : Fragment() {
+class MainFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private val adapter: MenuAdapter by lazy { MenuAdapter(emptyList()) }
-    private val viewModel by lazy { ViewModelProviders.of(this)[MenuViewModel::class.java] }
-    lateinit var binding: FragmentMenuBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +46,50 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
+        // Inflate the layout for this fragment
+        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        return inflater.inflate(R.layout.fragment_main, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        btn_frag2.setOnClickListener { v ->
+            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_login)
+        }
+
+        btn_menu.setOnClickListener { v ->
+            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_menuFragment)
+        }
+
+        btn_dialog.setOnClickListener {
+            val dialogGen : DialogGeneric = DialogGeneric()
+            dialogGen.show(fragmentManager!!, "DialogGen")
+        }
+
+        btn_status.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragment_status_delivery)
+        }
+
+        btn_entrega.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_deliveryFragment)
+        }
+
+        btn_score_delivery.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_scoreDeliveryFragment)
+        }
+
+        btn_wo_order.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_withOutOrderFragment)
+        }
+
+        btn_terms.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragmentTerms)
+        }
+
+//        btn_orden_table.setOnClickListener {
+//            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_ordenFragment)
+//        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -61,20 +97,18 @@ class MenuFragment : Fragment() {
         listener?.onFragmentInteraction(uri)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is OnFragmentInteractionListener) {
+            listener = context
+        } else {
+            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+        }
+    }
+
     override fun onDetach() {
         super.onDetach()
         listener = null
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-
-        rv_menu.layoutManager = linearLayoutManager
-        rv_menu.hasFixedSize()
-        rv_menu.adapter = adapter
-
-        binding.itemsViewModel = viewModel
     }
 
     /**
@@ -100,12 +134,12 @@ class MenuFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MenuFragment.
+         * @return A new instance of fragment MainFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MenuFragment().apply {
+            MainFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

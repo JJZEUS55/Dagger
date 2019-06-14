@@ -1,16 +1,15 @@
-package com.olimpo.av
+package com.olimpo.av.menu
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
-import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.MenuObject
+import com.olimpo.av.R
 
 class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAdapter.MenuHolder>() {
 

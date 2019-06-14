@@ -4,13 +4,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <variable name="itemsViewModel" type="com.olimpo.av.MenuViewModel"/>
+        <variable name="itemsViewModel" type="com.olimpo.av.menu.MenuViewModel"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MenuFragment">
+            tools:context=".menu.MenuFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <!--<TextView-->

@@ -1,10 +1,9 @@
-package com.olimpo.av
+package com.olimpo.av.menu
 
-import androidx.databinding.ObservableArrayList
-import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.olimpo.av.MenuObject
 
 class MenuViewModel: ViewModel(){
     var lstLiveMenu:LiveData<List<MenuObject>> = MutableLiveData<List<MenuObject>>().apply {
