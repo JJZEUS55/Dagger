@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.olimpo.av.dialog.DialogGeneric
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -62,9 +63,6 @@ class MainFragment : Fragment() {
 
         btn_dialog.setOnClickListener {
             val dialogGen : DialogGeneric = DialogGeneric()
-            dialogGen.txtBody = "HOLA PRROS"
-            dialogGen.txtOkButton = "ACEPTAR"
-            dialogGen.visibilityButtonCancel = View.GONE
             dialogGen.show(fragmentManager!!, "DialogGen")
         }
 

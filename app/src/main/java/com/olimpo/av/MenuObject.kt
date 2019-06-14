@@ -5,5 +5,5 @@ import androidx.databinding.ObservableField
 
 data class MenuObject(
     var title: String = "",
-    var visibility: ObservableField<Boolean> = ObservableField<Boolean>(false)// Visibility GONE
+    var visibility: Boolean = false// Visibility GONE
 )

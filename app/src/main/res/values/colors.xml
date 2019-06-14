@@ -26,4 +26,7 @@
 
     <color name="colorTableHeader">#59C3B2</color>
 
+    <!--DIALOG-->
+    <color name="colorTitleBackground">#E4EDED</color>
+
 </resources>

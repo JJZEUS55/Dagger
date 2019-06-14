@@ -64,6 +64,7 @@
     <string name="continueButton">Continuar</string>
     <string name="msg_question_1">¿Esta seguro que desea cerrar la sesión?</string>
     <string name="login">Entrar</string>
+    <string name="help_title">¿Hay algo en lo que podamos ayudarte?</string>
 
 
 </resources>

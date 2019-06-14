@@ -30,7 +30,7 @@
               tools:layout="@layout/fragment_menu"/>
     <fragment android:id="@+id/graphicsFragment" android:name="com.olimpo.av.GraphicsFragment"
               android:label="fragment_graphics" tools:layout="@layout/fragment_graphics"/>
-    <fragment android:id="@+id/login" android:name="com.olimpo.av.Login" android:label="fragment_login"
+    <fragment android:id="@+id/login" android:name="com.olimpo.av.login.Login" android:label="fragment_login"
               tools:layout="@layout/fragment_login"/>
     <fragment android:id="@+id/fragment_status_delivery" android:name="com.olimpo.av.fragment_status_delivery"
               android:label="fragment_fragment_status_delivery"

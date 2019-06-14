@@ -3,11 +3,14 @@ package com.olimpo.av
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.RecyclerView
-import com.olimpo.av.databinding.RowMenuBinding
 
 class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAdapter.MenuHolder>() {
 
@@ -46,17 +49,25 @@ class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAda
         )
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(itemMenu: MenuObject) {
+        fun bind(itemMenu: MenuObject) = with(binding.root) {
             binding.item = itemMenu
+            setOnClickListener {
+                binding.viewIsPressed.visibility = View.VISIBLE
+                itemMenu.visibility = true
+                Toast.makeText(it.context, itemMenu.title + " " + itemMenu.visibility, Toast.LENGTH_SHORT).show()
+            }
             binding.executePendingBindings()
         }
-
     }
 
     companion object {
         @BindingAdapter("adapter")
+        @JvmStatic
         fun RecyclerView.bindItems(items: List<MenuObject>) {
             val adapter = adapter as MenuAdapter
+            items.forEach {
+                it.visibility = false
+            }
             adapter.update(items)
         }
     }

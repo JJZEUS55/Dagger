@@ -1,17 +1,13 @@
-package com.olimpo.av
+package com.olimpo.av.terms
 
+import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_menu.*
-import com.olimpo.av.databinding.FragmentMenuBinding
+import com.olimpo.av.R
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,22 +18,17 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MenuFragment.OnFragmentInteractionListener] interface
+ * [FragmentTerms.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MenuFragment.newInstance] factory method to
+ * Use the [FragmentTerms.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MenuFragment : Fragment() {
+class FragmentTerms : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private val adapter: MenuAdapter by lazy { MenuAdapter(emptyList()) }
-    private val viewModel by lazy { ViewModelProviders.of(this)[MenuViewModel::class.java] }
-    lateinit var binding: FragmentMenuBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,9 +42,8 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_menu, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_terms, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -61,20 +51,13 @@ class MenuFragment : Fragment() {
         listener?.onFragmentInteraction(uri)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
     override fun onDetach() {
         super.onDetach()
         listener = null
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-
-        rv_menu.layoutManager = linearLayoutManager
-        rv_menu.hasFixedSize()
-        rv_menu.adapter = adapter
-
-        binding.itemsViewModel = viewModel
     }
 
     /**
@@ -100,12 +83,12 @@ class MenuFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MenuFragment.
+         * @return A new instance of fragment FragmentTerms.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MenuFragment().apply {
+            FragmentTerms().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -4,6 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="android.view.View"/>
         <variable name="item" type="com.olimpo.av.MenuObject"/>
     </data>
 
@@ -26,7 +27,7 @@
                 android:layout_width="7dp" android:layout_height="0dp"
                 android:background="@color/colorPrincipalAvon"
                 app:layout_constraintHeight_percent="0.8"
-                android:visibility="@{item.visibility ? View.GONE: View.VISIBLE}"
+                android:visibility="@{item.visibility ? View.VISIBLE: View.GONE}"
                 app:layout_constraintRight_toLeftOf="@+id/txt_val_menu"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
