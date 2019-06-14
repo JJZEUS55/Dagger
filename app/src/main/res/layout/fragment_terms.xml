@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!--<data>-->
-        <!--<variable name="termsViewModel" type="net.gshp.izzi.presentation.ui.login.terms.TermsViewModel"/>-->
-        <!--<import type="net.gshp.izzi.presentation.ui.utils.BindingMethods"/>-->
-    <!--</data>-->
+<layout>
+
+    <data>
+        <variable name="viewModelTerms" type="com.olimpo.av.terms.TermsViewModel"/>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -53,8 +54,10 @@
                 style="@style/Widget.MaterialComponents.Button"
                 app:cornerRadius="3dp"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
                 android:id="@+id/btn_continue"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+</layout>

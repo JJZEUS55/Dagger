@@ -32,16 +32,16 @@
               android:label="fragment_graphics" tools:layout="@layout/fragment_graphics"/>
     <fragment android:id="@+id/login" android:name="com.olimpo.av.login.Login" android:label="fragment_login"
               tools:layout="@layout/fragment_login"/>
-    <fragment android:id="@+id/fragment_status_delivery" android:name="com.olimpo.av.fragment_status_delivery"
+    <fragment android:id="@+id/fragment_status_delivery" android:name="com.olimpo.av.status.fragment_status_delivery"
               android:label="fragment_fragment_status_delivery"
               tools:layout="@layout/fragment_status_delivery"/>
     <fragment android:id="@+id/fragmentTerms" android:name="com.olimpo.av.FragmentTerms" android:label="fragment_terms"
               tools:layout="@layout/fragment_terms"/>
-    <fragment android:id="@+id/deliveryFragment" android:name="com.olimpo.av.DeliveryFragment"
+    <fragment android:id="@+id/deliveryFragment" android:name="com.olimpo.av.delivery.DeliveryFragment"
               android:label="fragment_delivery" tools:layout="@layout/fragment_delivery"/>
     <fragment android:id="@+id/scoreDeliveryFragment" android:name="com.olimpo.av.ScoreDeliveryFragment"
               android:label="fragment_score_delivery" tools:layout="@layout/fragment_score_delivery"/>
-    <fragment android:id="@+id/withOutOrderFragment" android:name="com.olimpo.av.WithOutOrderFragment"
+    <fragment android:id="@+id/withOutOrderFragment" android:name="com.olimpo.av.withOutOrder.WithOutOrderFragment"
               android:label="fragment_with_out_order" tools:layout="@layout/fragment_with_out_order"/>
     <fragment android:id="@+id/ordenFragment" android:name="com.olimpo.av.OrdenFragment" android:label="fragment_orden"
               tools:layout="@layout/fragment_orden"/>

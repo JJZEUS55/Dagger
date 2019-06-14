@@ -1,4 +1,4 @@
-package com.olimpo.av
+package com.olimpo.av.delivery
 
 import android.content.Context
 import android.net.Uri
@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.R
 import com.olimpo.av.unit.DeliveryItem
 import kotlinx.android.synthetic.main.fragment_delivery.*
 

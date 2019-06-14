@@ -1,141 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".login.Login">
-
-    <ImageView
-            android:id="@+id/icon_avon"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.6"
-            app:layout_constraintHeight_percent="0.1"
-            app:srcCompat="@drawable/ic_layer_avon"
-            android:contentDescription="Icono_Avon"
-            android:layout_marginTop="76dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
+<layout>
+    <data>
+        <variable name="viewModelLogin" type="com.olimpo.av.login.LoginViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.07"
-            android:textAlignment="center"
-            style="@style/textSize22"
-            android:text="Representante"
-            android:id="@+id/textView4"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginTop="44dp"
-            app:layout_constraintTop_toBottomOf="@+id/icon_avon" app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_height="match_parent"
+            tools:context=".login.Login">
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_username"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.65"
-            app:layout_constraintHeight_percent="0.1"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.503"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4">
+        <ImageView
+                android:id="@+id/icon_avon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="0.1"
+                app:srcCompat="@drawable/ic_layer_avon"
+                android:contentDescription="Icono_Avon"
+                android:layout_marginTop="76dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Usuario"
-                android:singleLine="true"
-                android:imeOptions="actionNext"
-        />
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.07"
+                android:textAlignment="center"
+                style="@style/textSize22"
+                android:text="Representante"
+                android:id="@+id/textView4"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginTop="44dp"
+                app:layout_constraintTop_toBottomOf="@+id/icon_avon" app:layout_constraintHorizontal_bias="0.0"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_password"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.65"
-            app:layout_constraintHeight_percent="0.1"
-            app:passwordToggleEnabled="true"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/input_username" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_height="wrap_content"
-                android:hint="Contreseña"
-                android:inputType="textPassword"
-                android:imeOptions="actionDone"
-                android:layout_width="match_parent"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.65"
-            app:layout_constraintHeight_percent="0.1"
-            android:text="@string/login"
-            android:backgroundTint="@color/colorPrincipalAvon"
-            android:textColor="@color/colorWhite"
-            android:id="@+id/btn_login"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/input_password"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            style="@style/Widget.MaterialComponents.Button"
-            app:cornerRadius="3dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-    <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintHeight_percent="0.04"
-            android:text="@string/forgot_password"
-            android:textAlignment="center"
-            style="@style/textSize12"
-            android:id="@+id/txt_recover_pass"
-            app:layout_constraintStart_toStartOf="@+id/btn_login" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/btn_login"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" android:layout_marginTop="24dp"
-            app:layout_constraintHorizontal_bias="0.497"/>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.04"
-            android:layout_gravity="bottom"
-            android:id="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/txt_recover_pass"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="1.0" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0">
-
-        <TextView
-                android:id="@+id/txt_terms_cond"
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_username"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                style="@style/textSize10"
-                android:text="@string/tittle_terms"
-                android:gravity="start"/>
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.503"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Usuario"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+            />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_password"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                app:layout_constraintHeight_percent="0.1"
+                app:passwordToggleEnabled="true"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/input_username" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_height="wrap_content"
+                    android:hint="Contreseña"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.65"
+                app:layout_constraintHeight_percent="0.1"
+                android:text="@string/login"
+                android:backgroundTint="@color/colorPrincipalAvon"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/btn_login"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/input_password"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius="3dp"
+                android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:gravity="end"
-                style="@style/textSize10"
-                android:text="@string/version"
-                android:id="@+id/txt_version"/>
+                app:layout_constraintHeight_percent="0.04"
+                android:text="@string/forgot_password"
+                android:textAlignment="center"
+                style="@style/textSize12"
+                android:id="@+id/txt_recover_pass"
+                app:layout_constraintStart_toStartOf="@+id/btn_login" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login" android:layout_marginTop="24dp"
+                app:layout_constraintHorizontal_bias="0.497"/>
 
-    </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.04"
+                android:layout_gravity="bottom"
+                android:id="@+id/constraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/txt_recover_pass"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1.0" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0">
+
+            <TextView
+                    android:id="@+id/txt_terms_cond"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    style="@style/textSize10"
+                    android:text="@string/tittle_terms"
+                    android:gravity="start"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="end"
+                    style="@style/textSize10"
+                    android:text="@string/version"
+                    android:id="@+id/txt_version"/>
+
+        </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

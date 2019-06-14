@@ -1,4 +1,4 @@
-package com.olimpo.av
+package com.olimpo.av.status
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.R
 import com.olimpo.av.unit.StatusDelivery
 
 class StatusDeliveryAdapter(var list: List<StatusDelivery>) : RecyclerView.Adapter<StatusDeliveryAdapter.ViewHolder>() {

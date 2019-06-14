@@ -8,7 +8,6 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.olimpo.av.MenuObject
 import com.olimpo.av.R
 
 class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAdapter.MenuHolder>() {
@@ -16,7 +15,6 @@ class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAda
     val countList: Int = listMenu.count()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuHolder {
-//        val inflateView = RowMenuBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MenuHolder(parent)
     }
 
@@ -49,9 +47,11 @@ class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAda
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(itemMenu: MenuObject) = with(binding.root) {
-            binding.item = itemMenu
+            binding.itemMenu = itemMenu
             setOnClickListener {
-                binding.viewIsPressed.visibility = View.VISIBLE
+                listMenu.forEach { menuObj ->
+                    menuObj.visibility = false
+                }
                 itemMenu.visibility = true
                 Toast.makeText(it.context, itemMenu.title + " " + itemMenu.visibility, Toast.LENGTH_SHORT).show()
             }
@@ -64,9 +64,6 @@ class MenuAdapter(var listMenu: List<MenuObject>) : RecyclerView.Adapter<MenuAda
         @JvmStatic
         fun RecyclerView.bindItems(items: List<MenuObject>) {
             val adapter = adapter as MenuAdapter
-            items.forEach {
-                it.visibility = false
-            }
             adapter.update(items)
         }
     }

@@ -87,9 +87,6 @@ class MainFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragmentTerms)
         }
 
-//        btn_orden_table.setOnClickListener {
-//            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_ordenFragment)
-//        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
