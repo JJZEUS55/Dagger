@@ -1,4 +1,4 @@
-package com.olimpo.av
+package com.olimpo.av.score
 
 import android.content.Context
 import android.net.Uri
@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.olimpo.av.R
+import kotlinx.android.synthetic.main.fragment_score_delivery.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +32,9 @@ class ScoreDeliveryFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private lateinit var adapter: ScoreAdapter
+    private lateinit var linearLayoutManager: LinearLayoutManager
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +50,33 @@ class ScoreDeliveryFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_score_delivery, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val list: MutableList<QuestItem> = ArrayList()
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+        list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
+
+        linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        adapter = ScoreAdapter(list)
+        rv_poll.adapter = adapter
+        rv_poll.layoutManager = linearLayoutManager
     }
 
     // TODO: Rename method, update argument and hook method into UI event

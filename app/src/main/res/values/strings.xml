@@ -7,7 +7,7 @@
 
     <!--FRAGMENT MENU-->
     <string name="num_repressing">No. Representante:</string>
-    <string name="cancel">No</string>
+    <string name="cancel">Cancelar</string>
     <string name="accept">Si</string>
 
     <!--STATUS DELIVERY-->
@@ -65,6 +65,34 @@
     <string name="msg_question_1">¿Esta seguro que desea cerrar la sesión?</string>
     <string name="login">Entrar</string>
     <string name="help_title">¿Hay algo en lo que podamos ayudarte?</string>
+    <string name="code_scanner">Escaner de códigos</string>
+    <string name="put_manual_code">Ingresar código manualmente (12 ó 13 digitos)</string>
+    <string name="box">Cajas</string>
+    <string name="unitary">Unitarios</string>
+    <string name="bundle">Bultos</string>
+    <string name="scanned">Escaneados</string>
+    <string name="assigned">Asignados</string>
+    <string name="missing">Faltantes</string>
+    <string name="total">Total</string>
+    <string name="detail_delivery">Detalle de entrega</string>
+    <string name="register">Registro:</string>
+    <string name="to_collect">A recolectar</string>
+    <string name="to_pay">
+        <b>A pagar:</b>
+    </string>
+    <string name="remits">
+        <b>Remitos:</b>
+    </string>
+    <string name="paid">PAGADO</string>
+    <string name="order_contains">El pedido consta de:</string>
+    <string name="scanner">ESCANEAR</string>
+    <string name="value">
+        <b>Valor:</b>
+    </string>
+    <string name="must_collect_remit">Debe recoger un remito</string>
+    <string name="remits_contains">El remito consta de:</string>
+    <string name="causes_refund">Causas de devoluciones de reparto</string>
+    <string name="photography_evidence">Evidencia Fotográfica</string>
 
 
 </resources>

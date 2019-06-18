@@ -53,8 +53,18 @@
                 android:id="@+id/btn_terms"
         />
         <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="BUTTON ORDEN TABLA"
-                android:id="@+id/btn_orden_table"
+                android:text="BUTTON ESCANER"
+                android:id="@+id/btn_scanner"
+        />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON CHOFER DETALLE"
+                android:id="@+id/btn_detail_driver"
+        />
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="BUTTON INCIDENCIA"
+                android:id="@+id/btn_incidence"
         />
 
     </LinearLayout>

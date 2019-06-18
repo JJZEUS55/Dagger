@@ -1,18 +1,13 @@
-package com.olimpo.av.menu
+package com.olimpo.av.detaildelivery
 
 import android.content.Context
-import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import com.olimpo.av.R
-import com.olimpo.av.dialog.DialogGeneric
-import com.olimpo.av.incidence.IncidenceDialog
-import kotlinx.android.synthetic.main.fragment_main.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,13 +18,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [MainFragment.OnFragmentInteractionListener] interface
+ * [DeliveryDetailFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [MainFragment.newInstance] factory method to
+ * Use the [DeliveryDetailFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class MainFragment : Fragment() {
+class DeliveryDetailFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -48,60 +43,7 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        return inflater.inflate(R.layout.fragment_main, container, false)
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-        btn_frag2.setOnClickListener { v ->
-            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_login)
-        }
-
-        btn_menu.setOnClickListener { v ->
-            Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_menuFragment)
-        }
-
-        btn_dialog.setOnClickListener {
-            val dialogGen : DialogGeneric = DialogGeneric()
-            dialogGen.show(fragmentManager!!, "DialogGen")
-        }
-
-        btn_status.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragment_status_delivery)
-        }
-
-        btn_entrega.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_deliveryFragment)
-        }
-
-        btn_score_delivery.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_scoreDeliveryFragment)
-        }
-
-        btn_wo_order.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_withOutOrderFragment)
-        }
-
-        btn_terms.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_fragmentTerms)
-        }
-
-        btn_scanner.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_scannerFragment)
-        }
-
-        btn_detail_driver.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_deliveryDetailFragment)
-        }
-
-        btn_incidence.setOnClickListener {
-            val dialogIncidenceDialog = IncidenceDialog()
-            dialogIncidenceDialog.show(fragmentManager!!, "DialogIncidence")
-        }
-
-
+        return inflater.inflate(R.layout.fragment_delivery_detail, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -141,12 +83,12 @@ class MainFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MainFragment.
+         * @return A new instance of fragment DeliveryDetailFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            MainFragment().apply {
+            DeliveryDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

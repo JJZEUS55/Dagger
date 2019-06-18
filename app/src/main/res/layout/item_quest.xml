@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<layout>
+    <data>
+        <variable name="itemQuest" type="com.olimpo.av.score.QuestItem"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
 
-    <CheckBox android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:text="Amabilidad del repartidor"
-              style="@style/textSize14"
-    />
+        <CheckBox android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/cb_quest"
+                  android:text="@{itemQuest.text}"
+                  style="@style/textSize14"
+        />
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
