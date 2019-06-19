@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/navigator_agent">
+            android:id="@+id/navigator_agent" app:startDestination="@id/login2">
 
+    <fragment android:id="@+id/login2" android:name="com.olimpo.av.login.Login" android:label="Login">
+        <action android:id="@+id/action_login2_to_fragment_status_delivery2"
+                app:destination="@id/fragment_status_delivery2"/>
+    </fragment>
+    <fragment android:id="@+id/fragment_status_delivery2" android:name="com.olimpo.av.status.fragment_status_delivery"
+              android:label="fragment_status_delivery">
+        <action android:id="@+id/action_fragment_status_delivery2_to_scoreDeliveryFragment2"
+                app:destination="@id/scoreDeliveryFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/scoreDeliveryFragment2" android:name="com.olimpo.av.score.ScoreDeliveryFragment"
+              android:label="ScoreDeliveryFragment">
+        <action android:id="@+id/action_scoreDeliveryFragment2_to_withOutOrderFragment2"
+                app:destination="@id/withOutOrderFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/withOutOrderFragment2" android:name="com.olimpo.av.withOutOrder.WithOutOrderFragment"
+              android:label="WithOutOrderFragment"/>
+    <fragment android:id="@+id/deliveryFragment2" android:name="com.olimpo.av.delivery.DeliveryFragment"
+              android:label="DeliveryFragment"/>
 </navigation>
