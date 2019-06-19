@@ -18,6 +18,9 @@
     <string name="zone">
         <b>Zona:</b>
     </string>
+    <string name="zone_wo_bold">
+        Zona:
+    </string>
     <string name="no_repre">No. Representante:</string>
     <string name="name">Name</string>
     <string name="route">
@@ -93,6 +96,17 @@
     <string name="remits_contains">El remito consta de:</string>
     <string name="causes_refund">Causas de devoluciones de reparto</string>
     <string name="photography_evidence">Evidencia Fotográfica</string>
+    <string name="special_delivery">Entrega Especial</string>
+    <string name="status">Estatus:</string>
+    <string name="mod_amount">Monto Modificado</string>
+    <string name="authorization">Autorización</string>
+    <string name="code_six_digits">Código de 6 dígitos</string>
+    <string name="agent">Representante</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contreseña</string>
+    <string name="image_profile">image_profile</string>
+    <string name="erase">Borrar</string>
+    <string name="save">Guardar</string>
 
 
 </resources>

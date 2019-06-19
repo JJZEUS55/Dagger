@@ -1,17 +1,17 @@
-package com.olimpo.av.incidence
+package com.olimpo.av
 
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.olimpo.av.R
+import com.olimpo.av.incidence.IncidenceAdapter
 import com.olimpo.av.score.QuestItem
-import com.olimpo.av.score.ScoreAdapter
 import kotlinx.android.synthetic.main.dialog_incidence.*
 
 
@@ -20,12 +20,20 @@ import kotlinx.android.synthetic.main.dialog_incidence.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class IncidenceDialog : DialogFragment() {
+/**
+ * A simple [Fragment] subclass.
+ * Activities that contain this fragment must implement the
+ * [IncidenceFragment.OnFragmentInteractionListener] interface
+ * to handle interaction events.
+ * Use the [IncidenceFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ *
+ */
+class IncidenceFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-
     private val adapter by lazy { IncidenceAdapter(emptyList()) }
     private lateinit var linearLayoutManager: LinearLayoutManager
 
@@ -45,19 +53,10 @@ class IncidenceDialog : DialogFragment() {
         return inflater.inflate(R.layout.dialog_incidence, container, false)
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
-
     override fun onStart() {
         super.onStart()
-        dialog?.let {
-            val width = ViewGroup.LayoutParams.MATCH_PARENT
-            val height = ViewGroup.LayoutParams.MATCH_PARENT
-            it.window?.setLayout(width, height)
-        }
-
+        lyt_title_dialog.setBackgroundResource(R.color.colorWhite)
+        btn_photo_evidence.visibility = View.GONE
         val list: MutableList<QuestItem> = ArrayList()
         list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
         list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
@@ -77,10 +76,18 @@ class IncidenceDialog : DialogFragment() {
         list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
         list.add(QuestItem(1, "NO HIZO BIEN SU CHAMBA"))
         linearLayoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        val params = rv_option_refund.layoutParams as ConstraintLayout.LayoutParams
+        params.matchConstraintPercentHeight = 0.72f
+        rv_option_refund.layoutParams = params
         adapter.list = list
         rv_option_refund.adapter = adapter
         rv_option_refund.layoutManager = linearLayoutManager
 
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    fun onButtonPressed(uri: Uri) {
+        listener?.onFragmentInteraction(uri)
     }
 
     override fun onAttach(context: Context) {
@@ -106,5 +113,25 @@ class IncidenceDialog : DialogFragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
+    }
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment IncidenceFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            IncidenceFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
     }
 }

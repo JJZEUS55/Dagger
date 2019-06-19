@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.olimpo.av.R
 import com.olimpo.av.dialog.DialogGeneric
+import com.olimpo.av.dialogModMount.DialogModAmount
 import com.olimpo.av.incidence.IncidenceDialog
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -101,6 +102,22 @@ class MainFragment : Fragment() {
             dialogIncidenceDialog.show(fragmentManager!!, "DialogIncidence")
         }
 
+        btn_special.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_specialDeliveryFragment2)
+        }
+
+        btn_incidence_fragment.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_incidenceFragment)
+        }
+
+        btn_firma.setOnClickListener{
+            Navigation.findNavController(it).navigate(R.id.action_mainFragment_to_paintFragment)
+        }
+
+        btn_mont_mod.setOnClickListener {
+            val dialog = DialogModAmount()
+            dialog.show(fragmentManager!!, "dialogmodamount")
+        }
 
     }
 

@@ -22,8 +22,10 @@
         <action android:id="@+id/action_mainFragment_to_scannerFragment" app:destination="@id/scannerFragment"/>
         <action android:id="@+id/action_mainFragment_to_deliveryDetailFragment"
                 app:destination="@id/deliveryDetailFragment"/>
+        <action android:id="@+id/action_mainFragment_to_specialDeliveryFragment2"
+                app:destination="@id/specialDeliveryFragment2"/>
+        <action android:id="@+id/action_mainFragment_to_incidenceFragment" app:destination="@id/incidenceFragment"/>
     </fragment>
-
     <fragment android:id="@+id/paintFragment" android:name="com.olimpo.av.PaintFragment" android:label="fragment_paint"
               tools:layout="@layout/fragment_paint"/>
 
@@ -52,5 +54,9 @@
               android:label="fragment_scanner" tools:layout="@layout/fragment_scanner"/>
     <fragment android:id="@+id/deliveryDetailFragment" android:name="com.olimpo.av.detaildelivery.DeliveryDetailFragment"
               android:label="fragment_delivery_detail" tools:layout="@layout/fragment_delivery_detail"/>
+    <fragment android:id="@+id/specialDeliveryFragment2" android:name="com.olimpo.av.special.SpecialDeliveryFragment"
+              android:label="fragment_special_delivery" tools:layout="@layout/fragment_special_delivery"/>
+    <fragment android:id="@+id/incidenceFragment" android:name="com.olimpo.av.IncidenceFragment"
+              android:label="fragment_incidence" tools:layout="@layout/fragment_incidence"/>
 
 </navigation>

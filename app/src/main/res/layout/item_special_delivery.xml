@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_marginBottom="16dp"
+>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+    >
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/txt_name_agent"
+                  android:text="Name"
+                  android:drawableStart="@drawable/ic_circle_gray"
+                  android:drawablePadding="8dp"
+                  style="@style/textSizeTitle14"
+                  app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                  android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/lyt_info_delivery"
+                      android:orientation="vertical"
+                      app:layout_constraintTop_toBottomOf="@+id/txt_name_agent"
+                      android:layout_marginTop="8dp"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_register"
+                      android:text="@string/register"
+                      style="@style/textSize14"
+            />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_zone"
+                      android:text="@string/zone_wo_bold"
+                      style="@style/textSize14"
+            />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_status"
+                      android:text="@string/status"
+                      style="@style/textSize14"
+                      android:layout_marginBottom="8dp"
+            />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

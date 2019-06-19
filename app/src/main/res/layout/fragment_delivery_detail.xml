@@ -1,580 +1,585 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".detaildelivery.DeliveryDetailFragment"
->
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout>
+    <data>
+        <variable name="viewModelDeliveryDetail" type="com.olimpo.av.detaildelivery.DeliveryDetailViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            tools:context=".detaildelivery.DeliveryDetailFragment"
     >
-
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txt_detail_delivery"
-                android:text="@string/detail_delivery"
-                android:textAlignment="center"
-                style="@style/textSizeTitle16"
-                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintHeight_percent="0.2"
-                android:id="@+id/card_agent"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_detail_delivery">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/image_user"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        app:srcCompat="@drawable/ic_avatar_option_3"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        android:layout_marginStart="10dp"
-                        app:layout_constraintEnd_toStartOf="@+id/lyt_name" android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/lyt_name"
-                              android:orientation="vertical"
-                              app:layout_constraintStart_toEndOf="@+id/image_user" android:layout_marginStart="8dp"
-                              app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
-                              app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.012"
-                              android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
-                              app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:text="@string/name"
-                              android:lines="1"
-                              style="@style/textSize16"
-                              android:id="@+id/textView2"
-                    />
-
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:id="@+id/txt_num_agent"
-                              android:text="@string/register"
-                              android:lines="1"
-                              android:layout_marginTop="8dp"
-                              style="@style/textSize12"
-                    />
-
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                              android:id="@+id/txt_detail_zone"
-                              android:text="@string/zone"
-                              android:lines="1"
-                              android:layout_marginTop="8dp"
-                              style="@style/textSize12"
-                    />
-                </LinearLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txt_collect"
-                android:text="@string/to_collect"
-                android:textAlignment="center"
-                style="@style/textSizeTitle16"
-                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_agent"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        <androidx.cardview.widget.CardView android:layout_width="match_parent"
-                                           android:layout_height="wrap_content"
-                                           android:id="@+id/card_pay"
-                                           app:layout_constraintTop_toBottomOf="@+id/txt_collect"
-                                           android:layout_marginTop="8dp"
-                                           app:layout_constraintStart_toStartOf="parent"
-                                           android:layout_marginStart="8dp"
-                                           app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-                                                               android:layout_height="wrap_content">
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                          android:id="@+id/txt_to_pay"
-                          android:text="@string/to_pay"
-                          app:layout_constraintWidth_percent="0.6"
-                          style="@style/textItemCardView"
-                          android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                          app:layout_constraintTop_toTopOf="parent"
-                          android:layout_marginTop="8dp"
-                />
-
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                          android:id="@+id/txt_remits"
-                          android:text="@string/remits"
-                          app:layout_constraintWidth_percent="0.3"
-                          app:layout_constraintLeft_toRightOf="@+id/txt_to_pay"
-                          app:layout_constraintTop_toTopOf="parent"
-                          android:layout_marginTop="8dp"
-                          style="@style/textItemCardView"
-                          android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
-
-                <FrameLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                             android:id="@+id/frag_spinner"
-                             android:background="@drawable/spinner_background"
-                             app:layout_constraintWidth_percent="0.6"
-                             app:layout_constraintTop_toBottomOf="@+id/txt_to_pay"
-                             android:layout_marginTop="8dp"
-                             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-
-                >
-                    <Spinner android:layout_width="match_parent" android:layout_height="wrap_content"
-                             android:id="@+id/spinner_select_payment"
-                    />
-                </FrameLayout>
-
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp"
-                                                                   android:layout_height="wrap_content"
-                                                                   android:id="@+id/btn_confirm_payment"
-                                                                   app:layout_constraintWidth_percent="0.3"
-                                                                   android:textAlignment="center"
-                                                                   app:layout_constraintLeft_toRightOf="@+id/frag_spinner"
-                                                                   android:text="@string/paid"
-                                                                   app:layout_constraintTop_toBottomOf="@+id/txt_remits"
-                                                                   android:layout_marginTop="8dp"
-                                                                   android:layout_marginEnd="8dp"
-                                                                   app:layout_constraintEnd_toEndOf="parent"
-                                                                   android:layout_marginBottom="8dp"
-                                                                   app:layout_constraintBottom_toBottomOf="parent"
-                                                                   style="@style/buttonAccept"
-                />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txt_order_contains"
-                android:text="@string/order_contains"
-                android:textAlignment="textStart"
-                style="@style/textSizeTitle16"
-                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_pay"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        <androidx.cardview.widget.CardView android:layout_width="match_parent"
-                                           android:layout_height="wrap_content"
-                                           android:id="@+id/card_order_driver"
-                                           app:layout_constraintTop_toBottomOf="@+id/txt_order_contains"
-                                           android:layout_marginTop="8dp"
-                                           app:layout_constraintStart_toStartOf="parent"
-                                           android:layout_marginStart="8dp"
-                                           app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-                                                               android:layout_height="wrap_content">
-
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/lyt_scanner"
-                              app:layout_constraintWidth_percent="0.35"
-                              android:orientation="vertical"
-                              app:layout_constraintTop_toTopOf="parent"
-                              app:layout_constraintLeft_toLeftOf="parent"
-                              android:layout_marginTop="8dp"
-                              android:layout_marginStart="8dp"
-                              android:background="@drawable/round_lyt_pink"
-                >
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:id="@+id/txt_scanner"
-                              android:textAlignment="center"
-                              android:text="@string/scanner"
-                              style="@style/textItemCardViewPink"
-                              android:textColor="@color/colorWhite"
-                              android:padding="8dp"
-                    />
-
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_width="match_parent"
-                                                                  android:layout_height="match_parent"
-                                                                  android:id="@+id/img_scanner"
-                                                                  android:padding="8dp"
-                                                                  app:srcCompat="@drawable/ic_barcode_gray"
-                    />
-
-                </LinearLayout>
-
-                <TableLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                             android:id="@+id/table_units"
-                             app:layout_constraintTop_toTopOf="parent"
-                             app:layout_constraintLeft_toRightOf="@+id/lyt_scanner"
-                             app:layout_constraintRight_toRightOf="parent"
-                             android:layout_marginTop="8dp"
-                             android:layout_marginStart="8dp"
-                             android:layout_marginEnd="8dp"
-                >
-                    <TableRow
-                            android:layout_width="wrap_content" android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                    >
-                        <TextView
-                                android:id="@+id/txt_bundle"
-                                android:text="@string/bundle"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/colorBackgroundItems"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-
-                        <TextView
-                                android:id="@+id/txt_box"
-                                android:text="@string/box"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:backgroundTint="@color/colorBackgroundItems"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-
-                        <TextView
-                                android:id="@+id/txt_box_units"
-                                android:text="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-                    </TableRow>
-
-                    <TableRow android:layout_width="wrap_content" android:layout_height="match_parent"
-                              android:orientation="horizontal">
-                        <TextView
-                                android:id="@+id/txt_bundle_units"
-                                android:text="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-
-                        <TextView
-                                android:id="@+id/txt_unitary"
-                                android:text="@string/unitary"
-                                android:layout_width="0dp"
-                                android:lines="1"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/colorBackgroundItems"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-
-                        <TextView
-                                android:id="@+id/txt_unitary_units"
-                                android:text="2"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight=".5"
-                                style="@style/textSize12"
-                                android:background="@drawable/border_table_layout_without_right"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
-                                android:paddingTop="12dp"
-                                android:paddingBottom="12dp"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:textAlignment="center"/>
-
-
-                    </TableRow>
-                </TableLayout>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:id="@+id/lyt_campaign"
-                              android:orientation="horizontal"
-                              app:layout_constraintTop_toBottomOf="@+id/lyt_scanner"
-                              android:layout_marginTop="8dp"
-                              app:layout_constraintLeft_toLeftOf="parent"
-                              app:layout_constraintRight_toRightOf="parent"
-                              android:layout_marginStart="8dp"
-                              android:layout_marginEnd="8dp"
-                              android:layout_marginBottom="8dp"
-                >
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.45"
-                              android:text="@string/campaign"
-                              style="@style/textItemCardView"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.45"
-                              android:text="@string/value"
-                              style="@style/textItemCardView"
-                              android:layout_marginStart="8dp"
-                    />
-
-                </LinearLayout>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="horizontal"
-                              android:id="@+id/lyt_table_items" app:layout_constraintEnd_toEndOf="parent"
-                              android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                              app:layout_constraintTop_toBottomOf="@+id/lyt_campaign"
-                              app:layout_goneMarginTop="8dp"
-                              android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-                              android:background="@color/colorTableHeader1"
-                >
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_code"
-                              android:text="@string/code"
-                              android:lines="1"
-                              android:layout_weight="0.25"
-                              android:padding="8dp"
-                              style="@style/textSize12"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_desc"
-                              android:text="@string/description"
-                              android:layout_weight="0.45"
-                              android:padding="8dp"
-                              android:lines="1"
-                              style="@style/textSize12"
-                              android:layout_marginStart="8dp"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_quantity"
-                              android:layout_weight="0.25"
-                              android:layout_marginStart="8dp"
-                              style="@style/textSize12"
-                              android:text="@string/quantity"
-                              android:lines="1"
-                              android:padding="8dp"
-                    />
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                                           android:layout_height="wrap_content"
-                                                           android:id="@+id/rv_order"
-                                                           app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
-                                                           android:layout_marginTop="8dp"
-                                                           app:layout_constraintBottom_toTopOf="@+id/lny_total"
-                                                           android:layout_marginBottom="8dp"
-                                                           tools:listitem="@layout/item_table_order"
-                                                           app:layout_constraintStart_toStartOf="parent"
-                                                           android:layout_marginStart="8dp"
-                                                           android:overScrollMode="never"
-                                                           app:layout_constraintEnd_toEndOf="parent"
-                                                           android:layout_marginEnd="8dp">
-
-
-                </androidx.recyclerview.widget.RecyclerView>
-
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:id="@+id/lny_total"
-                              app:layout_constraintTop_toBottomOf="@+id/rv_order"
-                              android:orientation="horizontal"
-                              android:layout_marginTop="8dp"
-                              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                              android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                              android:background="@color/colorTableHeader1" android:layout_marginBottom="8dp"
-                              app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.7"
-                              android:lines="1"
-                              android:gravity="right"
-                              style="@style/textSizeMedium12"
-                              android:text="@string/total_package"
-                              android:padding="8dp"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.2"
-                              style="@style/textSizeMedium12"
-                              android:gravity="center"
-                              android:text="4"
-                              android:lines="1"
-                              android:padding="8dp"
-                    />
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txt_remits_contains"
-                android:text="@string/remits_contains"
-                android:textAlignment="textStart"
-                style="@style/textSizeTitle16"
-                android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_order_driver"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        <androidx.cardview.widget.CardView android:layout_width="match_parent"
-                                           android:layout_height="wrap_content"
-                                           android:id="@+id/card_remits_order"
-                                           app:layout_constraintTop_toBottomOf="@+id/txt_remits_contains"
+                android:layout_height="match_parent"
         >
-            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-                                                               android:layout_height="wrap_content">
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:orientation="horizontal"
-                              android:id="@+id/lyt_table_items_remit" app:layout_constraintEnd_toEndOf="parent"
-                              app:layout_constraintTop_toTopOf="parent"
-                              android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                              android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-                              android:background="@color/colorTableHeader1"
-                >
+            <!-- TODO: Update blank fragment layout -->
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_detail_delivery"
+                    android:text="@string/detail_delivery"
+                    android:textAlignment="center"
+                    style="@style/textSizeTitle16"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHeight_percent="0.2"
+                    android:id="@+id/card_agent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_detail_delivery">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/image_user"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            app:srcCompat="@drawable/ic_avatar_option_3"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintEnd_toStartOf="@+id/lyt_name" android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/lyt_name"
+                                  android:orientation="vertical"
+                                  app:layout_constraintStart_toEndOf="@+id/image_user" android:layout_marginStart="8dp"
+                                  app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.012"
+                                  android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                                  app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:text="@string/name"
+                                  android:lines="1"
+                                  style="@style/textSize16"
+                                  android:id="@+id/textView2"
+                        />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_num_agent"
+                                  android:text="@string/register"
+                                  android:lines="1"
+                                  android:layout_marginTop="8dp"
+                                  style="@style/textSize12"
+                        />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_detail_zone"
+                                  android:text="@string/zone_wo_bold"
+                                  android:lines="1"
+                                  android:layout_marginTop="8dp"
+                                  style="@style/textSize12"
+                        />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_collect"
+                    android:text="@string/to_collect"
+                    android:textAlignment="center"
+                    style="@style/textSizeTitle16"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_agent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+                                               android:id="@+id/card_pay"
+                                               app:layout_constraintTop_toBottomOf="@+id/txt_collect"
+                                               android:layout_marginTop="8dp"
+                                               app:layout_constraintStart_toStartOf="parent"
+                                               android:layout_marginStart="8dp"
+                                               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                                   android:layout_height="wrap_content">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_code_remit"
-                              android:text="@string/code"
-                              android:lines="1"
-                              android:layout_weight="0.25"
-                              android:padding="8dp"
-                              style="@style/textSize12"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_desc_remit"
-                              android:text="@string/description"
-                              android:layout_weight="0.45"
-                              android:padding="8dp"
-                              android:lines="1"
-                              style="@style/textSize12"
-                              android:layout_marginStart="8dp"
-                    />
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:id="@+id/txt_quantity_remit"
-                              android:layout_weight="0.25"
-                              android:layout_marginStart="8dp"
-                              style="@style/textSize12"
-                              android:text="@string/quantity"
-                              android:lines="1"
-                              android:padding="8dp"
-                    />
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                                           android:layout_height="wrap_content"
-                                                           android:id="@+id/rv_order_remit"
-                                                           app:layout_constraintTop_toBottomOf="@+id/lyt_table_items_remit"
-                                                           android:layout_marginTop="8dp"
-                                                           android:layout_marginBottom="8dp"
-                                                           tools:listitem="@layout/item_table_order"
-                                                           app:layout_constraintStart_toStartOf="parent"
-                                                           android:layout_marginStart="8dp"
-                                                           android:overScrollMode="never"
-                                                           app:layout_constraintEnd_toEndOf="parent"
-                                                           android:layout_marginEnd="8dp">
-                </androidx.recyclerview.widget.RecyclerView>
-
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                              android:id="@+id/lny_total_remit"
-                              app:layout_constraintTop_toBottomOf="@+id/rv_order_remit"
-                              android:orientation="horizontal"
-                              android:layout_marginTop="8dp"
-                              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                              android:id="@+id/txt_to_pay"
+                              android:text="@string/to_pay"
+                              app:layout_constraintWidth_percent="0.6"
+                              style="@style/textItemCardView"
                               android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
-                              android:background="@color/colorTableHeader1" android:layout_marginBottom="8dp"
-                >
-
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.7"
-                              android:lines="1"
-                              android:gravity="right"
-                              style="@style/textSizeMedium12"
-                              android:text="@string/total_package"
-                              android:padding="8dp"
+                              app:layout_constraintTop_toTopOf="parent"
+                              android:layout_marginTop="8dp"
                     />
 
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                              android:layout_weight="0.2"
-                              style="@style/textSizeMedium12"
-                              android:gravity="center"
-                              android:text="4"
-                              android:lines="1"
-                              android:padding="8dp"
+                              android:id="@+id/txt_remits"
+                              android:text="@string/remits"
+                              app:layout_constraintWidth_percent="0.3"
+                              app:layout_constraintLeft_toRightOf="@+id/txt_to_pay"
+                              app:layout_constraintTop_toTopOf="parent"
+                              android:layout_marginTop="8dp"
+                              style="@style/textItemCardView"
+                              android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <FrameLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                 android:id="@+id/frag_spinner"
+                                 android:background="@drawable/spinner_background"
+                                 app:layout_constraintWidth_percent="0.6"
+                                 app:layout_constraintTop_toBottomOf="@+id/txt_to_pay"
+                                 android:layout_marginTop="8dp"
+                                 app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+
+                    >
+                        <Spinner android:layout_width="match_parent" android:layout_height="wrap_content"
+                                 android:id="@+id/spinner_select_payment"
+                        />
+                    </FrameLayout>
+
+                    <com.google.android.material.button.MaterialButton android:layout_width="0dp"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:id="@+id/btn_confirm_payment"
+                                                                       app:layout_constraintWidth_percent="0.3"
+                                                                       android:textAlignment="center"
+                                                                       app:layout_constraintLeft_toRightOf="@+id/frag_spinner"
+                                                                       android:text="@string/paid"
+                                                                       app:layout_constraintTop_toBottomOf="@+id/txt_remits"
+                                                                       android:layout_marginTop="8dp"
+                                                                       android:layout_marginEnd="8dp"
+                                                                       app:layout_constraintEnd_toEndOf="parent"
+                                                                       android:layout_marginBottom="8dp"
+                                                                       app:layout_constraintBottom_toBottomOf="parent"
+                                                                       style="@style/buttonAccept"
                     />
 
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:id="@+id/txt_must_collect"
-                  android:text="@string/must_collect_remit"
-                  android:textAlignment="center"
-                  android:background="@color/colorWhite"
-                  android:padding="8dp"
-                  app:layout_constraintTop_toBottomOf="@+id/card_remits_order"
-                  android:layout_marginTop="8dp"
-                  style="@style/textSizeTitle16"
-                  app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_order_contains"
+                    android:text="@string/order_contains"
+                    android:textAlignment="textStart"
+                    style="@style/textSizeTitle16"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_pay"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+                                               android:id="@+id/card_order_driver"
+                                               app:layout_constraintTop_toBottomOf="@+id/txt_order_contains"
+                                               android:layout_marginTop="8dp"
+                                               app:layout_constraintStart_toStartOf="parent"
+                                               android:layout_marginStart="8dp"
+                                               app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                                   android:layout_height="wrap_content">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/lyt_scanner"
+                                  app:layout_constraintWidth_percent="0.35"
+                                  android:orientation="vertical"
+                                  app:layout_constraintTop_toTopOf="parent"
+                                  app:layout_constraintLeft_toLeftOf="parent"
+                                  android:layout_marginTop="8dp"
+                                  android:layout_marginStart="8dp"
+                                  android:background="@drawable/round_lyt_pink"
+                    >
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_scanner"
+                                  android:textAlignment="center"
+                                  android:text="@string/scanner"
+                                  style="@style/textItemCardViewPink"
+                                  android:textColor="@color/colorWhite"
+                                  android:padding="8dp"
+                        />
+
+                        <androidx.appcompat.widget.AppCompatImageView android:layout_width="match_parent"
+                                                                      android:layout_height="match_parent"
+                                                                      android:id="@+id/img_scanner"
+                                                                      android:padding="8dp"
+                                                                      app:srcCompat="@drawable/ic_barcode_gray"
+                        />
+
+                    </LinearLayout>
+
+                    <TableLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                                 android:id="@+id/table_units"
+                                 app:layout_constraintTop_toTopOf="parent"
+                                 app:layout_constraintLeft_toRightOf="@+id/lyt_scanner"
+                                 app:layout_constraintRight_toRightOf="parent"
+                                 android:layout_marginTop="8dp"
+                                 android:layout_marginStart="8dp"
+                                 android:layout_marginEnd="8dp"
+                    >
+                        <TableRow
+                                android:layout_width="wrap_content" android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                        >
+                            <TextView
+                                    android:id="@+id/txt_bundle"
+                                    android:text="@string/bundle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/colorBackgroundItems"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
+
+                            <TextView
+                                    android:id="@+id/txt_box"
+                                    android:text="@string/box"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:backgroundTint="@color/colorBackgroundItems"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
+
+                            <TextView
+                                    android:id="@+id/txt_box_units"
+                                    android:text="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
+                        </TableRow>
+
+                        <TableRow android:layout_width="wrap_content" android:layout_height="match_parent"
+                                  android:orientation="horizontal">
+                            <TextView
+                                    android:id="@+id/txt_bundle_units"
+                                    android:text="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
+
+                            <TextView
+                                    android:id="@+id/txt_unitary"
+                                    android:text="@string/unitary"
+                                    android:layout_width="0dp"
+                                    android:lines="1"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/colorBackgroundItems"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
+
+                            <TextView
+                                    android:id="@+id/txt_unitary_units"
+                                    android:text="2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight=".5"
+                                    style="@style/textSize12"
+                                    android:background="@drawable/border_table_layout_without_right"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="12dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"
+                                    android:textAlignment="center"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+                        </TableRow>
+                    </TableLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/lyt_campaign"
+                                  android:orientation="horizontal"
+                                  app:layout_constraintTop_toBottomOf="@+id/lyt_scanner"
+                                  android:layout_marginTop="@dimen/_12ssp"
+                                  app:layout_constraintLeft_toLeftOf="parent"
+                                  app:layout_constraintRight_toRightOf="parent"
+                                  android:layout_marginStart="8dp"
+                                  android:layout_marginEnd="8dp"
+                                  android:layout_marginBottom="8dp"
+                    >
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.45"
+                                  android:text="@string/campaign"
+                                  style="@style/textItemCardView"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.45"
+                                  android:text="@string/value"
+                                  style="@style/textItemCardView"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/lyt_table_items" app:layout_constraintEnd_toEndOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toBottomOf="@+id/lyt_campaign"
+                                  app:layout_goneMarginTop="8dp"
+                                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                  android:background="@color/colorTableHeader1"
+                    >
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_code"
+                                  android:text="@string/code"
+                                  android:lines="1"
+                                  android:layout_weight="0.25"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_desc"
+                                  android:text="@string/description"
+                                  android:layout_weight="0.45"
+                                  android:padding="8dp"
+                                  android:lines="1"
+                                  style="@style/textSize12"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_quantity"
+                                  android:layout_weight="0.25"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/quantity"
+                                  android:lines="1"
+                                  android:padding="8dp"
+                        />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/rv_order"
+                                                               app:layout_constraintTop_toBottomOf="@+id/lyt_table_items"
+                                                               android:layout_marginTop="8dp"
+                                                               app:layout_constraintBottom_toTopOf="@+id/lny_total"
+                                                               android:layout_marginBottom="8dp"
+                                                               tools:listitem="@layout/item_table_order"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               android:layout_marginStart="8dp"
+                                                               android:overScrollMode="never"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:layout_marginEnd="8dp">
+
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/lny_total"
+                                  app:layout_constraintTop_toBottomOf="@+id/rv_order"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                  android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  android:background="@color/colorTableHeader1" android:layout_marginBottom="8dp"
+                                  app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.7"
+                                  android:lines="1"
+                                  android:gravity="right"
+                                  style="@style/textSizeMedium12"
+                                  android:text="@string/total_package"
+                                  android:padding="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.2"
+                                  style="@style/textSizeMedium12"
+                                  android:gravity="center"
+                                  android:text="4"
+                                  android:lines="1"
+                                  android:padding="8dp"
+                        />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_remits_contains"
+                    android:text="@string/remits_contains"
+                    android:textAlignment="textStart"
+                    style="@style/textSizeTitle16"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/card_order_driver"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                               android:layout_height="wrap_content"
+                                               android:id="@+id/card_remits_order"
+                                               app:layout_constraintTop_toBottomOf="@+id/txt_remits_contains"
+            >
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                                   android:layout_height="wrap_content">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/lyt_table_items_remit" app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent"
+                                  android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                                  android:background="@color/colorTableHeader1"
+                    >
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_code_remit"
+                                  android:text="@string/code"
+                                  android:lines="1"
+                                  android:layout_weight="0.25"
+                                  android:padding="8dp"
+                                  style="@style/textSize12"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_desc_remit"
+                                  android:text="@string/description"
+                                  android:layout_weight="0.45"
+                                  android:padding="8dp"
+                                  android:lines="1"
+                                  style="@style/textSize12"
+                                  android:layout_marginStart="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:id="@+id/txt_quantity_remit"
+                                  android:layout_weight="0.25"
+                                  android:layout_marginStart="8dp"
+                                  style="@style/textSize12"
+                                  android:text="@string/quantity"
+                                  android:lines="1"
+                                  android:padding="8dp"
+                        />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/rv_order_remit"
+                                                               app:layout_constraintTop_toBottomOf="@+id/lyt_table_items_remit"
+                                                               android:layout_marginTop="8dp"
+                                                               android:layout_marginBottom="8dp"
+                                                               tools:listitem="@layout/item_table_order"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               android:layout_marginStart="8dp"
+                                                               android:overScrollMode="never"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               android:layout_marginEnd="8dp">
+                    </androidx.recyclerview.widget.RecyclerView>
+
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/lny_total_remit"
+                                  app:layout_constraintTop_toBottomOf="@+id/rv_order_remit"
+                                  android:orientation="horizontal"
+                                  android:layout_marginTop="8dp"
+                                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                                  android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+                                  android:background="@color/colorTableHeader1" android:layout_marginBottom="8dp"
+                    >
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.7"
+                                  android:lines="1"
+                                  android:gravity="right"
+                                  style="@style/textSizeMedium12"
+                                  android:text="@string/total_package"
+                                  android:padding="8dp"
+                        />
+
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                  android:layout_weight="0.2"
+                                  style="@style/textSizeMedium12"
+                                  android:gravity="center"
+                                  android:text="4"
+                                  android:lines="1"
+                                  android:padding="8dp"
+                        />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:id="@+id/txt_must_collect"
+                      android:text="@string/must_collect_remit"
+                      android:textAlignment="center"
+                      android:background="@color/colorWhite"
+                      android:padding="8dp"
+                      app:layout_constraintTop_toBottomOf="@+id/card_remits_order"
+                      android:layout_marginTop="8dp"
+                      style="@style/textSizeTitle16"
+                      app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                      app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

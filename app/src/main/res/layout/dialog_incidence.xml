@@ -5,7 +5,6 @@
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
 >
-
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
                   android:id="@+id/lyt_title_dialog"
@@ -19,6 +18,7 @@
     >
         <TextView android:layout_width="match_parent" android:layout_height="match_parent"
                   android:id="@+id/txt_title_dialog"
+                  android:gravity="center_vertical"
                   android:textAlignment="center"
                   android:layout_marginEnd="8dp"
                   style="@style/textSizeTitle16"
@@ -29,13 +29,13 @@
     <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
                                                android:layout_height="0dp"
                                                android:id="@+id/rv_option_refund"
-                                               app:layout_constraintHeight_percent="0.60"
+                                               app:layout_constraintHeight_percent="0.62"
                                                app:layout_constraintTop_toBottomOf="@+id/lyt_title_dialog"
                                                android:layout_marginTop="8dp"
                                                app:layout_constraintStart_toStartOf="parent"
-                                               android:layout_marginStart="8dp"
+                                               android:layout_marginStart="16dp"
                                                app:layout_constraintEnd_toEndOf="parent"
-                                               android:layout_marginEnd="8dp"/>
+                                               android:layout_marginEnd="16dp"/>
 
     <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp"
                                                        android:id="@+id/btn_photo_evidence"
@@ -43,16 +43,15 @@
                                                        app:layout_constraintTop_toBottomOf="@+id/rv_option_refund"
                                                        android:layout_marginTop="8dp"
                                                        app:layout_constraintStart_toStartOf="parent"
-                                                       android:layout_marginStart="8dp"
+                                                       android:layout_marginStart="16dp"
                                                        app:layout_constraintEnd_toEndOf="parent"
-                                                       android:layout_marginEnd="8dp"
-                                                       app:layout_constraintHeight_percent="0.12"
+                                                       android:layout_marginEnd="16dp"
+                                                       app:layout_constraintHeight_percent="0.11"
                                                        app:icon="@drawable/ic_camera_gray"
                                                        app:iconGravity="textStart"
                                                        app:iconPadding="8dp"
                                                        app:iconTint="@color/colorCardView"
                                                        style="@style/buttonPhoto"
-
                                                        app:layout_constraintHorizontal_bias="0.0"
                                                        app:layout_constraintVertical_bias="0.0"
                                                        android:layout_marginBottom="8dp"
@@ -60,7 +59,7 @@
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
                   android:id="@+id/lyt_buttons"
-                  app:layout_constraintHeight_percent="0.13"
+                  app:layout_constraintHeight_percent="0.12"
                   android:orientation="horizontal"
                   android:layout_marginTop="8dp"
                   app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +73,6 @@
                                                            android:text="@string/cancel"
                                                            android:layout_weight="0.5"
                                                            android:layout_marginStart="8dp"
-                                                           android:layout_marginBottom="8dp"
                                                            style="@style/buttonCancel"
         />
 
@@ -85,7 +83,6 @@
                                                            android:layout_weight="0.5"
                                                            android:layout_marginStart="16dp"
                                                            android:layout_marginEnd="8dp"
-                                                           android:layout_marginBottom="8dp"
                                                            style="@style/buttonAccept"
         />
     </LinearLayout>
